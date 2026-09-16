@@ -161,4 +161,9 @@ class CopyAiReferenceActionTest : BasePlatformTestCase() {
         val result = action.formatReferenceString("src/Test.kt", myFixture.editor)
         assertEquals("@src/Test.kt", result)
     }
+
+    fun testFormatAbsolutePath() {
+        val result = action.formatReferenceString("C:/workspace/project/src/Test.kt", null)
+        assertEquals("@C:/workspace/project/src/Test.kt", result)
+    }
 }

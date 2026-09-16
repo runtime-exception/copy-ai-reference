@@ -17,6 +17,7 @@ When working with AI coding assistants (Claude, ChatGPT, etc.), you often need t
 ### Features
 
 - **Project View** — Right-click any file to copy its project-relative path as `@path/to/file.kt`
+- **Absolute Path** — Use the adjacent action to copy the full file path as `@C:/project/path/to/file.kt`
 - **Editor** — Right-click with a text selection to copy the path and line range as `@path/to/file.kt#L5-12`
 - Single line selection copies just `@path/to/file.kt#L5`
 
@@ -25,6 +26,7 @@ When working with AI coding assistants (Claude, ChatGPT, etc.), you often need t
 | Context | Action | Result |
 |---------|--------|--------|
 | Right-click a file in Project View | Copy relative path | `@src/main/Main.kt` |
+| Right-click a file in Project View | Copy absolute path | `@C:/project/src/main/Main.kt` |
 | Select text in editor → right-click | Copy path + line numbers | `@src/main/Main.kt#L10-25` |
 
 The copied text is ready to paste directly into your AI prompt.
@@ -51,6 +53,7 @@ Download the [latest release](https://github.com/runtime-excpetion/copy-ai-refer
 ### 功能
 
 - **项目视图** — 右键任意文件，复制 `@相对路径/文件名.kt` 格式的引用
+- **绝对路径** — 使用相邻菜单复制 `@盘符:/完整路径/文件名.kt` 格式的引用
 - **编辑器** — 选中代码后右键，复制 `@相对路径/文件名.kt#L5-12` 格式的引用（含行号）
 - 单行选中则仅输出 `@相对路径/文件名.kt#L5`
 
@@ -59,6 +62,7 @@ Download the [latest release](https://github.com/runtime-excpetion/copy-ai-refer
 | 操作 | 说明 | 结果 |
 |------|------|------|
 | 在项目视图中右键文件 | 复制相对路径 | `@src/main/Main.kt` |
+| 在项目视图中右键文件 | 复制绝对路径 | `@C:/project/src/main/Main.kt` |
 | 在编辑器中选中文本后右键 | 复制路径 + 行号 | `@src/main/Main.kt#L10-25` |
 
 复制后的内容可直接粘贴到 AI 提示词中使用。
