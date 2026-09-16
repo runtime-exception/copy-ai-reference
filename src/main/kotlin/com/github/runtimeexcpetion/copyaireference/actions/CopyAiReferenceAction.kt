@@ -13,7 +13,7 @@ import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
 import java.awt.datatransfer.StringSelection
 
-class CopyAiReferenceAction : AnAction() {
+open class CopyAiReferenceAction : AnAction() {
 
     override fun getActionUpdateThread(): ActionUpdateThread {
         return ActionUpdateThread.BGT
@@ -42,7 +42,7 @@ class CopyAiReferenceAction : AnAction() {
         CopyPasteManager.getInstance().setContents(StringSelection(result))
     }
 
-    internal fun buildReferenceString(project: Project, file: VirtualFile, editor: Editor?): String? {
+    internal open fun buildReferenceString(project: Project, file: VirtualFile, editor: Editor?): String? {
         val baseDir = getProjectBaseDir(project) ?: return null
         val relativePath = VfsUtilCore.getRelativePath(file, baseDir) ?: return null
         return formatReferenceString(relativePath, editor)
@@ -75,5 +75,12 @@ class CopyAiReferenceAction : AnAction() {
     private fun getProjectBaseDir(project: Project): VirtualFile? {
         val basePath = project.basePath ?: return null
         return LocalFileSystem.getInstance().findFileByPath(basePath)
+    }
+}
+
+class CopyAbsoluteAiReferenceAction : CopyAiReferenceAction() {
+
+    override fun buildReferenceString(project: Project, file: VirtualFile, editor: Editor?): String {
+        return formatReferenceString(file.path, editor)
     }
 }

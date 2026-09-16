@@ -29,6 +29,12 @@
             <keyboard-shortcut first-keystroke="control alt U" keymap="$default"/>
             <keyboard-shortcut first-keystroke="meta alt U" keymap="Mac OS X"/>
         </action>
+        <action id="CopyAbsoluteAiReference.File"
+                class="com.github.runtimeexcpetion.copyaireference.actions.CopyAbsoluteAiReferenceAction"
+                text="Copy Absolute AI Reference"
+                description="Copy absolute path to AI reference format">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="CopyAiReference.File"/>
+        </action>
         <action id="CopyAiReference.Editor"
                 class="com.github.runtimeexcpetion.copyaireference.actions.CopyAiReferenceAction"
                 text="Copy AI Reference"
@@ -36,6 +42,12 @@
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
             <keyboard-shortcut first-keystroke="control alt U" keymap="$default"/>
             <keyboard-shortcut first-keystroke="meta alt U" keymap="Mac OS X"/>
+        </action>
+        <action id="CopyAbsoluteAiReference.Editor"
+                class="com.github.runtimeexcpetion.copyaireference.actions.CopyAbsoluteAiReferenceAction"
+                text="Copy Absolute AI Reference"
+                description="Copy absolute path and line numbers to AI reference format">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CopyAiReference.Editor"/>
         </action>
     </actions>
 </idea-plugin>
